@@ -237,7 +237,8 @@
   /* ---------- section headers ---------- */
   .section-head{max-width:60ch; margin-bottom:44px;}
   .section-head .kicker{color:var(--gold-600); font-weight:600; font-size:.85rem; margin-bottom:8px;}
-  :root[data-theme="dark"] .section-head .kicker, @media (prefers-color-scheme:dark){.section-head .kicker{color:var(--gold-300);}}
+  :root[data-theme="dark"] .section-head .kicker{color:var(--gold-300);}
+  @media (prefers-color-scheme:dark){.section-head .kicker{color:var(--gold-300);}}
   .section-head h2{font-size:clamp(1.6rem, 2.6vw, 2.2rem);}
 
   section.band{padding:88px 0;}
