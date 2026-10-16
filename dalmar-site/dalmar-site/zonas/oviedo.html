@@ -28,8 +28,8 @@
 <style>
   :root{
     --navy-950:#0B1A2C; --navy-900:#0E2036; --navy-800:#152A45; --navy-700:#1C3A5C; --navy-600:#28496E;
-    --gold-600:#A9803F; --gold-500:#C6A15B; --gold-300:#E4CB92;
-    --cream:#F6F3EC; --cream-dim:#EDE8DA; --ink:#16202B; --stone:#5C6A78; --stone-light:#8B96A1; --line:#DAD3C1;
+    --gold-600:#7C5E26; --gold-500:#C6A15B; --gold-300:#E4CB92;
+    --cream:#F6F3EC; --cream-dim:#EDE8DA; --ink:#16202B; --stone:#5C6A78; --stone-light:#576573; --line:#DAD3C1;
     --radius-s:3px; --radius-m:6px;
   }
   @media (prefers-color-scheme: dark){
@@ -102,6 +102,9 @@
   .prop-loc{font-size:.84rem; color:var(--stone-light); margin-bottom:8px;}
   .prop-title{font-size:1rem; font-weight:600; margin-bottom:10px;}
   .prop-meta{display:flex; gap:12px; font-size:.8rem; color:var(--stone); border-top:1px solid var(--line); padding-top:10px;}
+  .prop-link{display:block; margin-top:10px; font-size:.83rem; font-weight:600; color:var(--gold-600); text-decoration:none;}
+  .prop-link:hover{text-decoration:underline;}
+  @media (prefers-color-scheme:dark){.prop-link{color:var(--gold-300);}}
   .no-listings{
     background:var(--cream); border:1px dashed var(--line); border-radius:var(--radius-m);
     padding:28px; text-align:center; color:var(--stone);
@@ -163,17 +166,33 @@
     .whatsapp-tooltip{display:none;}
     .cta-box{flex-direction:column; align-items:flex-start;}
   }
+
+  .skip-link{
+    position:absolute; left:-9999px; top:0; z-index:200;
+    background:var(--gold-500); color:var(--navy-950); padding:12px 18px;
+    border-radius:0 0 6px 0; font-weight:600; text-decoration:none; font-size:.92rem;
+  }
+  .skip-link:focus{left:0;}
+  :focus-visible{outline:2px solid var(--gold-500); outline-offset:3px;}
 </style>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Saltar al contenido</a>
 <header class="site">
   <div class="nav-inner">
     <a href="../index.html" class="brand">
-      <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M4 30 L20 8 L36 30" stroke="#C6A15B" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
-        <path d="M10 30 L10 20 L30 20 L30 30" stroke="#C6A15B" stroke-width="2.4" fill="none"/>
-        <line x1="4" y1="34" x2="36" y2="34" stroke="#C6A15B" stroke-width="2.4"/>
+      <svg width="26" height="26" viewBox="188 210 124 124" fill="none" aria-hidden="true">
+        <g transform="translate(150,150) scale(0.4)" fill="#C6A15B">
+          <rect x="160" y="190" width="22" height="55" rx="2"/>
+          <rect x="318" y="190" width="22" height="55" rx="2"/>
+          <path d="M 250,165 L 390,295 L 365,305 L 250,200 L 135,305 L 110,295 Z"/>
+          <path d="M 250,206 L 360,305 L 340,315 L 250,234 L 160,315 L 140,305 Z"/>
+          <path fill-rule="evenodd" d="M 250,260 C 228,260 210,278 210,300 C 210,322 228,340 250,340 C 272,340 290,322 290,300 C 290,278 272,260 250,260 Z M 250,280 C 239,280 230,289 230,300 C 230,311 239,320 250,320 C 261,320 270,311 270,300 C 270,289 261,280 250,280 Z"/>
+          <rect x="241" y="335" width="18" height="110" rx="3"/>
+          <rect x="259" y="398" width="22" height="14" rx="2"/>
+          <rect x="259" y="420" width="22" height="14" rx="2"/>
+        </g>
       </svg>
       <span class="brand-word">Dal<span>mar</span></span>
     </a>
@@ -181,7 +200,7 @@
   </div>
 </header>
 
-<div class="hero-band">
+<div class="hero-band" id="main-content">
   <div class="wrap">
     <p class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../index.html#zonas">Zonas</a> / Oviedo</p>
     <h1>Inmobiliaria en Oviedo</h1>
@@ -235,6 +254,7 @@
           <div class="prop-loc">Casco histórico, Oviedo</div>
           <div class="prop-title">Piso reformado con galería</div>
           <div class="prop-meta"><span>3 hab. · 2 baños · 92 m²</span></div>
+          <a href="../propiedades/piso-reformado-oviedo.html" class="prop-link">Ver ficha completa →</a>
         </div>
       </article>
     </div>
